@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="666.0" prefWidth="844.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c42project.modifyProductController">
+    <TextField fx:id="productIdTxt" disable="true" layoutX="119.0" layoutY="116.0" text="Auto Gen - Disabled">
+        <font>
+            <Font name="System Italic" size="12.0" />
+        </font>
+    </TextField>
+    <TextField fx:id="productNameTxt" layoutX="119.0" layoutY="156.0" />
+    <TextField fx:id="productInventoryTxt" layoutX="119.0" layoutY="201.0" prefHeight="26.0" prefWidth="92.0" />
+    <TextField fx:id="productPriceTxt" layoutX="119.0" layoutY="241.0" prefHeight="26.0" prefWidth="92.0" />
+    <TextField fx:id="productMaxTxt" layoutX="119.0" layoutY="281.0" prefHeight="26.0" prefWidth="92.0" />
+    <TextField fx:id="productMinTxt" layoutX="286.0" layoutY="281.0" prefHeight="26.0" prefWidth="92.0" />
+    <TextField fx:id="searchPartTxt" layoutX="670.0" layoutY="61.0" prefHeight="26.0" prefWidth="160.0" onKeyTyped="#onInputSearchParts" promptText="Search by Part ID or Name" />
+    <TableView fx:id="partTableView" layoutX="418.0" layoutY="101.0" prefHeight="200.0" prefWidth="402.0">
+        <columns>
+            <TableColumn fx:id="partIdCol" prefWidth="55.20001220703125" text="Part ID" />
+            <TableColumn fx:id="partNameCol" prefWidth="84.800048828125" text="Part Name" />
+            <TableColumn fx:id="partInventoryCol" prefWidth="99.20002746582031" text="Inventory Level" />
+            <TableColumn fx:id="partPriceCol" prefWidth="144.0" text="Price / Cost per Unit" />
+        </columns>
+    </TableView>
+    <Button layoutX="769.0" layoutY="318.0" mnemonicParsing="false" onAction="#onActionAddAssocPart" text="Add" />
+    <TableView fx:id="assocPartTableView" layoutX="418.0" layoutY="360.0" prefHeight="200.0" prefWidth="402.0">
+        <columns>
+            <TableColumn fx:id="assocPartIdCol" prefWidth="61.60003662109375" text="Part ID" />
+            <TableColumn fx:id="assocPartNameCol" prefWidth="84.0" text="Part Name" />
+            <TableColumn fx:id="assocPartInventoryCol" prefWidth="103.99993896484375" text="Inventory Level" />
+            <TableColumn fx:id="assocPartPriceCol" prefWidth="136.800048828125" text="Price / Cost per Unit" />
+        </columns>
+    </TableView>
+    <Button layoutX="673.0" layoutY="572.0" mnemonicParsing="false" onAction="#onActionRemoveAssocPart" text="Remove Associated Part" />
+    <Button layoutX="673.0" layoutY="612.0" mnemonicParsing="false" onAction="#onActionSaveProduct" text="Save" />
+    <Button layoutX="763.0" layoutY="612.0" mnemonicParsing="false" onAction="#onActionCancel" text="Cancel" />
+    <Text layoutX="26.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Product" underline="true">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Text>
+    <Label layoutX="31.0" layoutY="120.0" text="ID:" />
+    <Label layoutX="28.0" layoutY="160.0" text="Name:" />
+    <Label layoutX="31.0" layoutY="206.0" text="Inventory:" />
+    <Label layoutX="31.0" layoutY="246.0" text="Price/Cost:" />
+    <Label layoutX="31.0" layoutY="285.0" text="Max:" />
+    <Label layoutX="241.0" layoutY="286.0" text="Min:" />
+</AnchorPane>
